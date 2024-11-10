@@ -1,5 +1,19 @@
 //Catppuccin color palette
 
+@use 'sass:color';
+
+$background: #000000 !default;
+$currentline: #000000 !default;
+$foreground: #000000 !default;
+$comment: #000000 !default;
+$cyan: #000000 !default;
+$green: #000000 !default;
+$orange: #000000 !default;
+$pink: #000000 !default;
+$purple: #000000 !default;
+$red: #000000 !default;
+$yellow: #000000 !default;
+
 /* Prettify by @pranavdeshai
 
 Version: 0.1.3
@@ -27,7 +41,7 @@ Links:
 .card,
 .card.night_mode {
   /* Dark theme only */
-  background-color: #{darken($background, 5)};
+  background-color: #{color.scale($background, $lightness: -5%)};
   --text-fg: #{$foreground};
   --text-fg-faint: #{$comment};
   --text-bg-selected: #323543;

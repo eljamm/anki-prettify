@@ -1,14 +1,15 @@
-//Catppuccin color palette
-$background: #1e1e2e; // base
-$currentline: #313244; // surface0
-$foreground: #cdd6f4; // text
-$comment: #585b70; // surface2
-$cyan: #89dceb; // sky
-$green: #a6e3a1;
-$orange: #fab387; // peach
-$pink: #f5c2e7;
-$purple: #cba6f7; // mauve
-$red: #f38ba8;
-$yellow: #f9e2af;
+@use 'sass:color';
 
-@import 'base'
+//Catppuccin color palette
+@use 'base' with ($background: #1e1e2e, // base
+  $currentline: #313244, // surface0
+  $foreground: #cdd6f4, // text
+  $comment: #585b70, // surface2
+  $cyan: #89dceb, // sky
+  $green: #a6e3a1,
+  $orange: #fab387, // peach
+  $pink: #f5c2e7,
+  $purple: #cba6f7, // mauve
+  $red: #f38ba8,
+  $yellow: #f9e2af,
+)

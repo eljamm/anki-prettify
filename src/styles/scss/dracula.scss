@@ -11,6 +11,8 @@ $purple: #bd93f9;
 $red: #ff5555;
 $yellow: #f1fa8c;
 
+@use 'sass:color';
+
 /* Prettify by @pranavdeshai: Dracula
 
 Version: 0.1.3
@@ -38,7 +40,7 @@ Links:
 .card,
 .card.night_mode {
   /* Dark theme only */
-  background-color: #{darken($background, 5)};
+  background-color: #{color.scale($background, $lightness: -5%)};
   --text-fg: #{$foreground};
   --text-fg-faint: #{$comment};
   --text-bg-selected: #323543;
