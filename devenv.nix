@@ -40,6 +40,7 @@
   # https://devenv.sh/scripts/
   scripts.sb.exec = "sass --no-source-map src/styles/scss:src/styles/css";
   scripts.sw.exec = "sass --no-source-map src/styles/scss:src/styles/css --watch";
+  scripts.sp.exec = "python tools/build.py";
 
   # https://devenv.sh/tasks/
   # tasks = {
