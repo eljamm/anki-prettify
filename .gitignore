@@ -24,6 +24,7 @@ Icon
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
+.sass-cache
 
 # Directories potentially created on remote AFP share
 .AppleDB
@@ -51,3 +52,15 @@ Temporary Items
 # Ignore all local history of files
 .history
 .ionide
+
+
+### Nix ###
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
