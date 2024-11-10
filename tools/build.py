@@ -14,6 +14,8 @@ FONTS = {
     "minimal": "Inter",
     "nord": "Rubik",
     "dracula": "Source Sans Pro",
+    "catppuccin-macchiato": "Source Sans Pro",
+    "catppuccin-mocha": "Source Sans Pro",
 }
 
 # Field contents for each note type

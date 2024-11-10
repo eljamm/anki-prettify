@@ -49,5 +49,39 @@
             "deck_id": 1735475348,
             "note_id": 1554162403
         }
+    },
+    "catppuccin-macchiato": {
+        "basic": {
+            "model_id": 1438795709,
+            "deck_id": 1499308814,
+            "note_id": 1154721576
+        },
+        "basic_reverse": {
+            "model_id": 1655593179,
+            "deck_id": 1386804808,
+            "note_id": 1257979672
+        },
+        "cloze": {
+            "model_id": 1353517606,
+            "deck_id": 1577576108,
+            "note_id": 1646344953
+        }
+    },
+    "catppuccin-mocha": {
+        "basic": {
+            "model_id": 1218812774,
+            "deck_id": 1381084515,
+            "note_id": 1430323331
+        },
+        "basic_reverse": {
+            "model_id": 2142514512,
+            "deck_id": 1423262733,
+            "note_id": 1316383017
+        },
+        "cloze": {
+            "model_id": 2072053168,
+            "deck_id": 1412097986,
+            "note_id": 1765970335
+        }
     }
 }
