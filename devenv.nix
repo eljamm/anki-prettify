@@ -31,8 +31,8 @@
   };
 
   enterShell = ''
-    export GIT_DIR=$(git rev-parse --show-toplevel)
-    export SASS_COMMAND="sass $GIT_DIR/src/styles/scss:$GIT_DIR/src/styles/css"
+    export ROOT_PATH=$(git rev-parse --show-toplevel)
+    export SASS_COMMAND="sass $ROOT_PATH/src/styles/scss:$ROOT_PATH/src/styles/css"
   '';
 
   # https://devenv.sh/processes/
@@ -43,7 +43,7 @@
   scripts.sw.exec = "$SASS_COMMAND --watch"; # Watch scss folder & compile files
   scripts.sp.exec = # Package Anki decks
     ''
-      pushd $GIT_DIR > /dev/null
+      pushd $ROOT_PATH > /dev/null
         python tools/build.py
       popd > /dev/null
     '';
