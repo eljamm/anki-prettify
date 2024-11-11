@@ -25,6 +25,7 @@ Icon
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
 .sass-cache
+*.map
 
 # Directories potentially created on remote AFP share
 .AppleDB
