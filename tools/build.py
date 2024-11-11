@@ -34,6 +34,8 @@ NOTE_FIELDS = {
     ],
 }
 
+MEDIA_FILES = ["src/scripts/_prettify.js"]
+
 # Store the root path for future use
 root = Path(f"{__file__}/../..").resolve()
 
@@ -202,7 +204,9 @@ for t in ids:
         deck.add_note(note)
 
         # Note type-wise packages
-        genanki.Package(deck).write_to_file(
+        package = genanki.Package(deck)
+        package.media_files = MEDIA_FILES
+        package.write_to_file(
             root / "themes" / t / "notetypes" / f"prettify-{t}-{n}.apkg"
         )
 
@@ -212,11 +216,13 @@ for t in ids:
         decks[t].append(deck)
 
     # Theme-wise packages
-    genanki.Package(decks[t]).write_to_file(root / "themes" / t / f"prettify-{t}.apkg")
+    package = genanki.Package(decks[t])
+    package.media_files = MEDIA_FILES
+    package.write_to_file(root / "themes" / t / f"prettify-{t}.apkg")
 
 # Master package with all the themes
-genanki.Package([d for x in decks.values() for d in x]).write_to_file(
-    root / "prettify.apkg"
-)
+package = genanki.Package([d for x in decks.values() for d in x])
+package.media_files = MEDIA_FILES
+package.write_to_file(root / "prettify.apkg")
 
 print("Generated all packages successfully")
