@@ -30,7 +30,7 @@
 
   enterShell = ''
     export GIT_DIR=$(git rev-parse --show-toplevel)
-    export SASS_COMMAND="sass --style=compressed $GIT_DIR/src/styles/scss:$GIT_DIR/src/styles/css"
+    export SASS_COMMAND="sass $GIT_DIR/src/styles/scss:$GIT_DIR/src/styles/css"
   '';
 
   # https://devenv.sh/processes/

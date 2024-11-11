@@ -3,6 +3,11 @@ todo.md
 test
 venv
 
+## Stylesheets
+*.map
+.sass-cache
+src/styles/css/compressed
+
 ### macOS ###
 # General
 .DS_Store
@@ -24,8 +29,6 @@ Icon
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
-.sass-cache
-*.map
 
 # Directories potentially created on remote AFP share
 .AppleDB

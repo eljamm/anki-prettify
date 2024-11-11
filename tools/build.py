@@ -82,7 +82,7 @@ if new_ver != last_rel_ver:
 
 # Compile SCSS to CSS
 os.system(
-    f"sass --style=compressed {str(root / 'src' / 'styles' / 'scss')}:{str(root / 'src' / 'styles' / 'css')}"
+    f"sass --style=compressed {str(root / 'src' / 'styles' / 'scss')}:{str(root / 'src' / 'styles' / 'css' / 'compressed')}"
 )
 print("Compiled SCSS to CSS")
 
@@ -124,7 +124,9 @@ for t in ids:
             "r+",
         ) as f1, open(
             (root / "src" / "templates" / "default" / n / f"{n}-back.html"), "r+"
-        ) as f2, open((root / "src" / "styles" / "css" / f"{t}.css")) as f3:
+        ) as f2, open(
+            (root / "src" / "styles" / "css" / "compressed" / f"{t}.css")
+        ) as f3:
             front_html = f1.read()
             back_html = f2.read()
             css = f3.read()
@@ -207,7 +209,8 @@ for t in ids:
         package = genanki.Package(deck)
         package.media_files = MEDIA_FILES
         package.write_to_file(
-            root / "themes" / t / "notetypes" / f"prettify-{t}-{n}.apkg"
+            root / "themes" / t / "notetypes" / f"prettify-{t}-{n}.apkg",
+            timestamp=31536000,
         )
 
         if t not in decks:
@@ -218,11 +221,16 @@ for t in ids:
     # Theme-wise packages
     package = genanki.Package(decks[t])
     package.media_files = MEDIA_FILES
-    package.write_to_file(root / "themes" / t / f"prettify-{t}.apkg")
+    package.write_to_file(
+        root / "themes" / t / f"prettify-{t}.apkg", timestamp=31536000
+    )
 
 # Master package with all the themes
 package = genanki.Package([d for x in decks.values() for d in x])
 package.media_files = MEDIA_FILES
-package.write_to_file(root / "prettify.apkg")
+package.write_to_file(
+    root / "themes" / "prettify.apkg",
+    timestamp=31536000,
+)
 
 print("Generated all packages successfully")
