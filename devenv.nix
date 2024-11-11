@@ -3,6 +3,8 @@
   # https://devenv.sh/packages/
   packages = with pkgs; [
     git
+    nixfmt-rfc-style
+    treefmt
 
     dart-sass
     prettierd
