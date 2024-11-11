@@ -1,14 +1,9 @@
-{
-  pkgs,
-  lib,
-  config,
-  inputs,
-  ...
-}:
-
+{ self, pkgs, ... }:
 {
   # https://devenv.sh/packages/
   packages = with pkgs; [
+    git
+
     dart-sass
     prettierd
   ];
@@ -16,7 +11,6 @@
   cachix.enable = false;
 
   # https://devenv.sh/languages/
-  # languages.rust.enable = true;
   languages.python = {
     enable = true;
     venv.enable = true;
@@ -34,28 +28,23 @@
     libraries = [ pkgs.python3Packages.pyyaml ];
   };
 
-  # https://devenv.sh/processes/
-  processes.sass-watch.exec = "sass --no-source-map src/styles/scss:src/styles/css --watch";
+  enterShell = ''
+    export GIT_DIR=$(git rev-parse --show-toplevel)
+    export SASS_COMMAND="sass --no-source-map $GIT_DIR/src/styles/scss:$GIT_DIR/src/styles/css"
+  '';
 
-  # https://devenv.sh/services/
-  # services.postgres.enable = true;
+  # https://devenv.sh/processes/
+  processes.sass-watch.exec = "$SASS_COMMAND --watch";
 
   # https://devenv.sh/scripts/
-  scripts.sb.exec = "sass --no-source-map src/styles/scss:src/styles/css";
-  scripts.sw.exec = "sass --no-source-map src/styles/scss:src/styles/css --watch";
-  scripts.sp.exec = "python tools/build.py";
-
-  # https://devenv.sh/tasks/
-  # tasks = {
-  #   "myproj:setup".exec = "mytool build";
-  #   "devenv:enterShell".after = [ "myproj:setup" ];
-  # };
-
-  # # https://devenv.sh/tests/
-  # enterTest = ''
-  #   echo "Running tests"
-  #   git --version | grep --color=auto "${pkgs.git.version}"
-  # '';
+  scripts.ss.exec = "$SASS_COMMAND"; # Compile css files
+  scripts.sw.exec = "$SASS_COMMAND --watch"; # Watch scss folder & compile files
+  scripts.sp.exec = # Package Anki decks
+    ''
+      pushd $GIT_DIR > /dev/null
+        python tools/build.py
+      popd > /dev/null
+    '';
 
   # https://devenv.sh/pre-commit-hooks/
   pre-commit.hooks = {
@@ -64,6 +53,4 @@
       fail_fast = true; # stop running hooks if prettier fails
     };
   };
-
-  # See full reference at https://devenv.sh/reference/options/
 }
