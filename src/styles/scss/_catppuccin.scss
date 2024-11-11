@@ -1,6 +1,6 @@
 //Catppuccin color palette
 
-@use 'sass:color';
+@use "sass:color";
 
 $background: #000000 !default;
 $currentline: #000000 !default;
@@ -211,7 +211,7 @@ img {
     opacity: 1;
   }
 
-  &+br {
+  & + br {
     display: none;
   }
 
@@ -294,7 +294,6 @@ table {
 
 /* -------------------------------------------------- HYPERLINKS */
 a {
-
   &,
   &:visited {
     text-decoration: none;
@@ -323,8 +322,8 @@ em {
   color: var(--italic-fg);
 }
 
-b>i,
-i>b {
+b > i,
+i > b {
   color: var(--bold-italic-fg);
 }
 
