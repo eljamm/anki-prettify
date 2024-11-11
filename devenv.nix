@@ -8,7 +8,10 @@
 
 {
   # https://devenv.sh/packages/
-  packages = [ pkgs.dart-sass ];
+  packages = with pkgs; [
+    dart-sass
+    prettierd
+  ];
 
   cachix.enable = false;
 
@@ -55,7 +58,12 @@
   # '';
 
   # https://devenv.sh/pre-commit-hooks/
-  # pre-commit.hooks.shellcheck.enable = true;
+  pre-commit.hooks = {
+    prettier = {
+      enable = true;
+      fail_fast = true; # stop running hooks if prettier fails
+    };
+  };
 
   # See full reference at https://devenv.sh/reference/options/
 }
