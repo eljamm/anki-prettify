@@ -1,0 +1,17 @@
+variables:
+- name: language
+  default_value: basic
+- name: language__idx
+  default_value: 0
+- name: language__label
+  default_value: basic
+- name: nixpkgs_version
+  default_value: '24.11'
+- name: nixpkgs_version__idx
+  default_value: 0
+- name: nixpkgs_version__label
+  default_value: Stable (24.11)
+sources:
+- uri: /tmp/ffizer-basic/templates/basic
+  rev: master
+  subfolder: null
