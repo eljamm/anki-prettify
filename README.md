@@ -127,9 +127,15 @@ Tested on
 
 - [x] ~~New theme~~
 - [ ] Documentation
+  - [ ] Workflow for adding themes
+  - [ ] Building apkg files from source (w/ Nix)
+- [ ] More themes!
+  - [ ] Refactor theme composition
+  - [ ] Update theme list
+- [ ] CI/CD
+  - [ ] Automatic releases with GitHub actions
 - [ ] "Type in the answer" note type
 - [ ] Out of the box support for popular note types (E.g. AnKing note types)
-- [ ] More themes!
 
 ## Support development
 
