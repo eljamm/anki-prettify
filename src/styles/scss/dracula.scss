@@ -25,350 +25,351 @@ Links:
 
 /* -------------------------------------------------- PREFERENCES */
 :root {
-  --card-max-width: 40em;
-  --card-text-align: left;
-  --font-size-regular: 16px;
-  --font-size-small: 14px;
-  --font-family: "Source Sans Pro", -apple-system, sytem-ui, BlinkMacSystemFont,
-    Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  --img-width: 50%;
-  --img-brightness: 1;
-  --img-filter: none;
+    --card-max-width: 40em;
+    --card-text-align: left;
+    --font-size-regular: 16px;
+    --font-size-small: 14px;
+    --font-family:
+        "Source Sans Pro", -apple-system, sytem-ui, BlinkMacSystemFont,
+        Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    --img-width: 50%;
+    --img-brightness: 1;
+    --img-filter: none;
 }
 
 /* -------------------------------------------------- COLORS */
 .card,
 .card.night_mode {
-  /* Dark theme only */
-  background-color: #{color.scale($background, $lightness: -5%)};
-  --text-fg: #{$foreground};
-  --text-fg-faint: #{$comment};
-  --text-bg-selected: #323543;
-  --card-bg: #{$background};
-  --card-border: #{$currentline};
-  --card-box-shadow: transparent;
-  --divider: #{$comment};
-  --tag-fg: #{$background};
-  --tag-bg: #{$purple};
-  --tag-fg-active: #{$comment};
-  --tag-bg-active: #{$purple};
-  --tag-border: transparent;
-  --tag-border-active: #{$purple};
-  --cloze-fg: #{$cyan};
-  --cloze-bg: transparent;
-  --link-fg: #{$foreground};
-  --link-bg: transparent;
-  --link-fg-active: #{$cyan};
-  --link-bg-active: transparent;
-  --bold-fg: #{$pink};
-  --italic-fg: #{$yellow};
-  --bold-italic-fg: #{$red};
-  --underline-fg: #{$green};
+    /* Dark theme only */
+    background-color: #{color.scale($background, $lightness: -5%)};
+    --text-fg: #{$foreground};
+    --text-fg-faint: #{$comment};
+    --text-bg-selected: #323543;
+    --card-bg: #{$background};
+    --card-border: #{$currentline};
+    --card-box-shadow: transparent;
+    --divider: #{$comment};
+    --tag-fg: #{$background};
+    --tag-bg: #{$purple};
+    --tag-fg-active: #{$comment};
+    --tag-bg-active: #{$purple};
+    --tag-border: transparent;
+    --tag-border-active: #{$purple};
+    --cloze-fg: #{$cyan};
+    --cloze-bg: transparent;
+    --link-fg: #{$foreground};
+    --link-bg: transparent;
+    --link-fg-active: #{$cyan};
+    --link-bg-active: transparent;
+    --bold-fg: #{$pink};
+    --italic-fg: #{$yellow};
+    --bold-italic-fg: #{$red};
+    --underline-fg: #{$green};
 }
 
 /* -------------------------------------------------- BACKGROUND */
 .card {
-  cursor: default;
-  padding: 0.5em 0;
+    cursor: default;
+    padding: 0.5em 0;
 
-  html:not(.mobile) & {
-    padding: 0.5em;
-  }
+    html:not(.mobile) & {
+        padding: 0.5em;
+    }
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 /* -------------------------------------------------- FLASHCARD */
 .prettify-flashcard {
-  background-color: var(--card-bg);
-  border-radius: 0.5em;
-  border: 1px solid var(--card-border);
-  box-shadow: var(--card-box-shadow) 0px 4px 6px;
-  color: var(--text-fg);
-  font-family: var(--font-family);
-  font-size: var(--font-size-regular);
-  line-height: 1.5;
-  margin: 0 auto;
-  max-width: var(--card-max-width);
-  text-align: var(--card-text-align);
-  word-wrap: break-word;
+    background-color: var(--card-bg);
+    border-radius: 0.5em;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-box-shadow) 0px 4px 6px;
+    color: var(--text-fg);
+    font-family: var(--font-family);
+    font-size: var(--font-size-regular);
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: var(--card-max-width);
+    text-align: var(--card-text-align);
+    word-wrap: break-word;
 
-  ::selection {
-    background-color: var(--text-bg-selected);
-  }
+    ::selection {
+        background-color: var(--text-bg-selected);
+    }
 }
 
 /* -------------------------------------------------- FIELDS */
 .prettify-field {
-  margin: 2em;
+    margin: 2em;
 
-  .mobile & {
-    margin: 1em;
-  }
+    .mobile & {
+        margin: 1em;
+    }
 }
 
 .prettify-field--back {
-  color: var(--text-fg);
-  font-size: var(--font-size-small);
+    color: var(--text-fg);
+    font-size: var(--font-size-small);
 }
 
 /* -------------------------------------------------- CLOZE */
 .cloze {
-  background-color: var(--cloze-bg);
-  color: var(--cloze-fg);
+    background-color: var(--cloze-bg);
+    color: var(--cloze-fg);
 }
 
 /* -------------------------------------------------- DECK */
 .prettify-deck {
-  margin: 2em;
-  display: flex;
-  color: var(--text-fg-faint);
-  font-size: var(--font-size-small);
-  white-space: nowrap;
+    margin: 2em;
+    display: flex;
+    color: var(--text-fg-faint);
+    font-size: var(--font-size-small);
+    white-space: nowrap;
 
-  .mobile & {
-    margin: 1em;
-  }
+    .mobile & {
+        margin: 1em;
+    }
 }
 
 .prettify-subdeck {
-  text-decoration: underline;
-  text-overflow: ellipsis;
-  overflow: hidden;
+    text-decoration: underline;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 /* -------------------------------------------------- TAGS */
 .prettify-tags {
-  margin: 2em;
-  display: flex;
-  flex-flow: row wrap;
-  font-size: var(--font-size-small);
+    margin: 2em;
+    display: flex;
+    flex-flow: row wrap;
+    font-size: var(--font-size-small);
 
-  .mobile & {
-    margin: 1em;
-  }
+    .mobile & {
+        margin: 1em;
+    }
 }
 
 .prettify-tag {
-  all: initial;
-  background-color: var(--tag-bg);
-  border-radius: 0.25em;
-  border: 1px solid var(--tag-border);
-  color: var(--tag-fg);
-  display: inline;
-  font-size: var(--font-size-small);
-  font-family: var(--font-family);
-  margin: 0 0.5em 0.5em 0;
-  padding: 0.25em;
-  transition: all 0.25s;
-  word-break: break-word;
+    all: initial;
+    background-color: var(--tag-bg);
+    border-radius: 0.25em;
+    border: 1px solid var(--tag-border);
+    color: var(--tag-fg);
+    display: inline;
+    font-size: var(--font-size-small);
+    font-family: var(--font-family);
+    margin: 0 0.5em 0.5em 0;
+    padding: 0.25em;
+    transition: all 0.25s;
+    word-break: break-word;
 
-  &:hover {
-    background-color: var(--tag-bg-active);
-    border: 1px solid var(--tag-border-active);
-    color: var(--tag-fg-active);
-    cursor: pointer;
-  }
+    &:hover {
+        background-color: var(--tag-bg-active);
+        border: 1px solid var(--tag-border-active);
+        color: var(--tag-fg-active);
+        cursor: pointer;
+    }
 }
 
 /* -------------------------------------------------- DIVIDER */
 .prettify-divider {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px dashed var(--divider);
-  margin: 1em;
-  padding: 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px dashed var(--divider);
+    margin: 1em;
+    padding: 0;
 }
 
 .prettify-divider--answer {
-  border-bottom: 1px solid var(--divider);
+    border-bottom: 1px solid var(--divider);
 }
 
 /* -------------------------------------------------- IMAGES */
 img {
-  border-radius: 0.25em;
-  display: block;
-  margin: 1em auto;
-  max-width: var(--img-width) !important;
-  transition:
-    max-width 0.25s 0.1s,
-    opacity 0.25s 0.1s,
-    filter 0.1s,
-    transform 0s;
+    border-radius: 0.25em;
+    display: block;
+    margin: 1em auto;
+    max-width: var(--img-width) !important;
+    transition:
+        max-width 0.25s 0.1s,
+        opacity 0.25s 0.1s,
+        filter 0.1s,
+        transform 0s;
 
-  .night_mode & {
-    filter: var(--img-filter);
-    opacity: var(--img-brightness);
-  }
+    .night_mode & {
+        filter: var(--img-filter);
+        opacity: var(--img-brightness);
+    }
 
-  &:hover {
-    cursor: zoom-in;
-    filter: none;
-    max-width: 100% !important;
-    opacity: 1;
-  }
+    &:hover {
+        cursor: zoom-in;
+        filter: none;
+        max-width: 100% !important;
+        opacity: 1;
+    }
 
-  & + br {
-    display: none;
-  }
+    & + br {
+        display: none;
+    }
 
-  html:not(.mobile) &:active {
-    border: 1px solid var(--link-fg-active);
-    cursor: zoom-out;
-    filter: none;
-    left: 0;
-    max-width: 95% !important;
-    opacity: 1;
-    position: fixed;
-    top: 0;
-    transform: translate(calc(50vw - 50%), calc(50vh - 50%));
-    z-index: 100;
-  }
+    html:not(.mobile) &:active {
+        border: 1px solid var(--link-fg-active);
+        cursor: zoom-out;
+        filter: none;
+        left: 0;
+        max-width: 95% !important;
+        opacity: 1;
+        position: fixed;
+        top: 0;
+        transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+        z-index: 100;
+    }
 }
 
 /* -------------------------------------------------- TABLES */
 table {
-  border-collapse: separate;
-  border-spacing: 0;
-  margin: 0 auto;
-  max-width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 0 auto;
+    max-width: 100%;
 
-  thead {
-    background-color: var(--text-bg-selected);
-  }
-
-  tr {
-    &:nth-of-type(even) {
-      background-color: var(--text-bg-selected);
+    thead {
+        background-color: var(--text-bg-selected);
     }
 
-    &:first-child {
-      th {
+    tr {
+        &:nth-of-type(even) {
+            background-color: var(--text-bg-selected);
+        }
+
         &:first-child {
-          border-top-left-radius: 0.5em;
+            th {
+                &:first-child {
+                    border-top-left-radius: 0.5em;
+                }
+
+                &:last-child {
+                    border-top-right-radius: 0.5em;
+                }
+            }
         }
 
         &:last-child {
-          border-top-right-radius: 0.5em;
+            td {
+                &:first-child {
+                    border-bottom-left-radius: 0.5em;
+                }
+
+                &:last-child {
+                    border-bottom-right-radius: 0.5em;
+                }
+            }
         }
-      }
     }
 
-    &:last-child {
-      td {
-        &:first-child {
-          border-bottom-left-radius: 0.5em;
-        }
+    th {
+        border-bottom: solid 1px var(--card-border);
+        border-left: solid 1px var(--card-border);
+        border-top: solid 1px var(--card-border);
+        padding: 0.5em;
 
         &:last-child {
-          border-bottom-right-radius: 0.5em;
+            border-right: solid 1px var(--card-border);
         }
-      }
     }
-  }
 
-  th {
-    border-bottom: solid 1px var(--card-border);
-    border-left: solid 1px var(--card-border);
-    border-top: solid 1px var(--card-border);
-    padding: 0.5em;
+    td {
+        border-bottom: solid 1px var(--card-border);
+        border-left: solid 1px var(--card-border);
+        padding: 0.5em;
 
-    &:last-child {
-      border-right: solid 1px var(--card-border);
+        &:last-of-type {
+            border-right: solid 1px var(--card-border);
+        }
     }
-  }
-
-  td {
-    border-bottom: solid 1px var(--card-border);
-    border-left: solid 1px var(--card-border);
-    padding: 0.5em;
-
-    &:last-of-type {
-      border-right: solid 1px var(--card-border);
-    }
-  }
 }
 
 /* -------------------------------------------------- HYPERLINKS */
 a {
-  &,
-  &:visited {
-    text-decoration: none;
-    color: var(--link-fg-active);
-    border-radius: 0.25em;
-    padding: 0 0.1em;
-    transition: all 0.1s;
-  }
+    &,
+    &:visited {
+        text-decoration: none;
+        color: var(--link-fg-active);
+        border-radius: 0.25em;
+        padding: 0 0.1em;
+        transition: all 0.1s;
+    }
 
-  &:hover,
-  &:active {
-    text-decoration: underline;
-    color: var(--link-fg-active);
-    background-color: var(--link-bg-active);
-  }
+    &:hover,
+    &:active {
+        text-decoration: underline;
+        color: var(--link-fg-active);
+        background-color: var(--link-bg-active);
+    }
 }
 
 /* -------------------------------------------------- FORMATTING */
 b,
 strong {
-  color: var(--bold-fg);
+    color: var(--bold-fg);
 }
 
 i,
 em {
-  color: var(--italic-fg);
+    color: var(--italic-fg);
 }
 
 b > i,
 i > b {
-  color: var(--bold-italic-fg);
+    color: var(--bold-italic-fg);
 }
 
 u {
-  color: var(--underline-fg);
+    color: var(--underline-fg);
 }
 
 pre {
-  white-space: normal;
+    white-space: normal;
 }
 
 /* -------------------------------------------------- CUSTOM FONTS */
 @font-face {
-  font-family: Source Sans Pro;
-  src:
-    local("SourceSansPro-Regular"),
-    url("_SourceSansPro-Regular.woff2") format("woff2");
-  font-style: normal;
-  font-weight: normal;
+    font-family: Source Sans Pro;
+    src:
+        local("SourceSansPro-Regular"),
+        url("_SourceSansPro-Regular.woff2") format("woff2");
+    font-style: normal;
+    font-weight: normal;
 }
 
 @font-face {
-  font-family: Source Sans Pro;
-  src:
-    local("SourceSansPro-Bold"),
-    url("_SourceSansPro-Bold.woff2") format("wofff2");
-  font-style: normal;
-  font-weight: bold;
+    font-family: Source Sans Pro;
+    src:
+        local("SourceSansPro-Bold"),
+        url("_SourceSansPro-Bold.woff2") format("wofff2");
+    font-style: normal;
+    font-weight: bold;
 }
 
 @font-face {
-  font-family: Source Sans Pro;
-  src:
-    local("SourceSansPro-Italic"),
-    url("_SourceSansPro-Italic.woff2") format("wofff2");
-  font-style: italic;
-  font-weight: normal;
+    font-family: Source Sans Pro;
+    src:
+        local("SourceSansPro-Italic"),
+        url("_SourceSansPro-Italic.woff2") format("wofff2");
+    font-style: italic;
+    font-weight: normal;
 }
 
 @font-face {
-  font-family: Source Sans Pro;
-  src:
-    local("SourceSansPro-BoldItalic"),
-    url("_SourceSansPro-BoldItalic.woff2") format("wofff2");
-  font-style: italic;
-  font-weight: bold;
+    font-family: Source Sans Pro;
+    src:
+        local("SourceSansPro-BoldItalic"),
+        url("_SourceSansPro-BoldItalic.woff2") format("wofff2");
+    font-style: italic;
+    font-weight: bold;
 }
 
 /* -------------------------------------------------- END OF THEME */

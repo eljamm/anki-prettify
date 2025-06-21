@@ -18,4 +18,3 @@
 
 <img src="../../res/images/nord-light-mobile.png" width=49%>
 <img src="../../res/images/nord-dark-mobile.png" width=49%>
-
