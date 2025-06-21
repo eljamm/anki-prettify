@@ -13,6 +13,7 @@ let
     projectRootFile = "default.nix";
     programs.nixfmt.enable = true;
     programs.actionlint.enable = true;
+    programs.prettier.enable = true;
   };
 
   pre-commit-hook = pkgs.writeShellScriptBin "git-hooks" ''
@@ -21,20 +22,13 @@ let
     fi
   '';
 
-  formatter = pkgs.writeShellApplication {
-    name = "formatter";
-    runtimeInputs = [ treefmt ];
-    text = ''
-      # shellcheck disable=all
-      shell-hook () {
-        ${lib.getExe pre-commit-hook}
-      }
-
-      if [[ -d .git ]]; then
-        shell-hook
-      fi
-      treefmt
-    '';
-  };
+  format = pkgs.writeShellScriptBin "format" ''
+    ${lib.getExe treefmt}
+  '';
 in
-formatter
+{
+  inherit
+    pre-commit-hook
+    format
+    ;
+}

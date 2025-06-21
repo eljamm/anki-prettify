@@ -45,10 +45,12 @@ let
         packages = with pkgs; [
           dart-sass
           devPython
-          formatter
+          formatter.format
+          formatter.pre-commit-hook
           gitMinimal
           prettierd
           scripts.build
+          scripts.package
           scripts.watch
         ];
 
