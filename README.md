@@ -74,7 +74,8 @@ Supported on desktop, mobile and web!
 
 - To download decks for specific note type, choose the note type folder from the `notetypes` directory under the theme directory. (`themes/THEME/notetypes/NOTETYPE`)
 
-> **Note**: Download links to accompanying fonts to themes are provided above. Refer to [Anki Manual - Installing Fonts](https://docs.ankiweb.net/templates/styling.html#installing-fonts) for instructions.
+> [!NOTE]
+> Download links to accompanying fonts to themes are provided above. Refer to [Anki Manual - Installing Fonts](https://docs.ankiweb.net/templates/styling.html#installing-fonts) for instructions.
 
 #### Manual method
 
@@ -98,16 +99,20 @@ Source code (templates and themes) is located in the [`src`](src) directory.
 
 To update to the latest version of Prettify (themes/note types), just download the required decks again.
 
-> **Warning**: The already existing templates and styles will be _overwritten_ once you import the deck with updated content. To avoid any loss of edits, it is highly recommended that you use clones of the downloaded note types. (Refer to [Anki manual - Adding a note type](https://docs.ankiweb.net/editing.html#adding-a-note-type) for instructions on cloning a note type).
+> [!WARNING]
+> The already existing templates and styles will be _overwritten_ once you import the deck with updated content. To avoid any loss of edits, it is highly recommended that you use clones of the downloaded note types. (Refer to [Anki manual - Adding a note type](https://docs.ankiweb.net/editing.html#adding-a-note-type) for instructions on cloning a note type).
 
 ## Add-on support
 
 The following add-ons are currently supported
 
+<!-- TODO: support https://github.com/eljamm/Anki-KaTeX-Markdown-Reworked -->
+
 - [Clickable Tags](https://ankiweb.net/shared/info/1739176371)
 - [Edit Field During Review (Cloze)](https://ankiweb.net/shared/info/385888438)
 
-> **Note**: Add-ons are optional and not necessary. The templates work as expected _with or without_ the add-ons.
+> [!NOTE]
+> Add-ons are optional and not necessary. The templates work as expected _with or without_ the add-ons.
 
 ## Compatibility
 
@@ -117,13 +122,14 @@ Tested on
 - **Mobile**: AnkiDroid 2.15+
 - **Browsers** (AnkiWeb): Chrome (97.0.4692.71+), Safari (15.0+)
 
-> **Note**: Although tested on relatively newer versions of Anki, all the themes should work as expected with all versions of Anki 2.1+.
+> [!NOTE]
+> Although tested on relatively newer versions of Anki, all the themes should work as expected with all versions of Anki 2.1+.
 
 ## Requirements
 
 - Anki 2.1 or higher (should work with Anki 2.0)
 
-## Plans for future
+## Plans for the future
 
 - [x] ~~New theme~~
 - [ ] Documentation
