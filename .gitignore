@@ -59,12 +59,10 @@ Temporary Items
 
 
 ### Nix ###
-# Devenv
-.devenv*
-devenv.local.nix
+result*
 
-# direnv
-.direnv
+# https://github.com/nix-community/nix-direnv
+.direnv*
 
-# pre-commit
+# https://github.com/fricklerhandwerk/git-hooks
 .pre-commit-config.yaml

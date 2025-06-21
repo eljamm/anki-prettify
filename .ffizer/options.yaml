@@ -6,12 +6,21 @@ variables:
 - name: language__label
   default_value: basic
 - name: nixpkgs_version
-  default_value: '24.11'
+  default_value: unstable
 - name: nixpkgs_version__idx
-  default_value: 0
+  default_value: 1
 - name: nixpkgs_version__label
-  default_value: Stable (24.11)
+  default_value: Unstable
+- name: template_name
+  default_value: default
+- name: template_name__idx
+  default_value: 0
+- name: template_name__label
+  default_value: default
 sources:
+- uri: /tmp/ffizer-default/templates/default
+  rev: master
+  subfolder: null
 - uri: /tmp/ffizer-basic/templates/basic
   rev: master
   subfolder: null
