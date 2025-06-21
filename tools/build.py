@@ -119,14 +119,16 @@ decks = {}
 
 for t in ids:
     for n in ids[t]:
-        with open(
-            (root / "src" / "templates" / "default" / n / f"{n}-front.html"),
-            "r+",
-        ) as f1, open(
-            (root / "src" / "templates" / "default" / n / f"{n}-back.html"), "r+"
-        ) as f2, open(
-            (root / "src" / "styles" / "css" / "compressed" / f"{t}.css")
-        ) as f3:
+        with (
+            open(
+                (root / "src" / "templates" / "default" / n / f"{n}-front.html"),
+                "r+",
+            ) as f1,
+            open(
+                (root / "src" / "templates" / "default" / n / f"{n}-back.html"), "r+"
+            ) as f2,
+            open((root / "src" / "styles" / "css" / "compressed" / f"{t}.css")) as f3,
+        ):
             front_html = f1.read()
             back_html = f2.read()
             css = f3.read()
@@ -192,7 +194,7 @@ for t in ids:
 
         deck = genanki.Deck(
             ids[t][n]["deck_id"],
-            f"Prettify::{t.capitalize()}::{n.capitalize().replace('_',' ')}",
+            f"Prettify::{t.capitalize()}::{n.capitalize().replace('_', ' ')}",
         )
 
         note = genanki.Note(

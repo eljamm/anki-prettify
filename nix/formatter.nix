@@ -14,6 +14,7 @@ let
     programs.nixfmt.enable = true;
     programs.actionlint.enable = true;
     programs.prettier.enable = true;
+    programs.ruff-format.enable = true;
   };
 
   pre-commit-hook = pkgs.writeShellScriptBin "git-hooks" ''
