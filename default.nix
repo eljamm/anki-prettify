@@ -35,19 +35,7 @@ let
   };
 
   formatter = import ./nix/formatter.nix args;
-  devPython = pkgs.python3.withPackages (
-    ps: with ps; [
-      cached-property
-      certifi
-      charset-normalizer
-      chevron
-      frozendict
-      genanki
-      idna
-      requests
-      urllib3
-    ]
-  );
+  scripts = import ./nix/scripts.nix args;
 
   default = rec {
     packages = { };
@@ -58,10 +46,32 @@ let
           dart-sass
           devPython
           formatter
+          gitMinimal
           prettierd
+          scripts.build
+          scripts.watch
         ];
+
+        shellHook = ''
+          export ROOT_PATH=$(git rev-parse --show-toplevel)
+          export SASS_COMMAND="sass $ROOT_PATH/src/styles/scss:$ROOT_PATH/src/styles/css"
+        '';
       };
     };
+
+    devPython = pkgs.python3.withPackages (
+      ps: with ps; [
+        cached-property
+        certifi
+        charset-normalizer
+        chevron
+        frozendict
+        genanki
+        idna
+        requests
+        urllib3
+      ]
+    );
 
     flake.packages = lib.filterAttrs (n: v: lib.isDerivation v) packages;
     flake.devShells = shells;
