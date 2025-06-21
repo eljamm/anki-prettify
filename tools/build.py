@@ -46,7 +46,7 @@ semver_regex = re.compile(
 # Get latest version release number
 try:
     last_rel_ver = requests.get(
-        "https://api.github.com/repos/pranavdeshai/anki-prettify/releases/latest"
+        "https://api.github.com/repos/eljamm/anki-prettify/releases/latest"
     ).json()["tag_name"]
 except KeyError:
     with open(

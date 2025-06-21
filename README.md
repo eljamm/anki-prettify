@@ -1,4 +1,7 @@
-# Prettify
+# Anki Prettify
+
+> [!NOTE]
+> This is an opinionated fork of <https://github.com/pranavdeshai/anki-prettify>, re-made as a repo for more discoverability.
 
 Collection of customizable Anki flashcard templates with modern and clean themes.
 
@@ -130,9 +133,9 @@ Tested on
 
 ## Support development
 
-If you like my work, you can support the development by
+You can support the development by starring the project on GitHub.
 
-- Starring the project on GitHub
-- Following me on GitHub
-- [Buying me a coffee](https://www.buymeacoffee.com/pranavdeshai)
-- Donating on [Ko-fi](https://ko-fi.com/pranavdeshai)
+Also, please consider suporting the original author:
+
+- [Buy a coffee](https://www.buymeacoffee.com/pranavdeshai)
+- Donate on [Ko-fi](https://ko-fi.com/pranavdeshai)
