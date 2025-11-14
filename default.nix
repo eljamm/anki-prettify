@@ -21,6 +21,27 @@ lib.makeScope pkgs.newScope (scope: {
   formatter = scope.callPackage ./nix/formatter.nix { };
   scripts = scope.callPackage ./nix/scripts.nix { };
 
+  ankiCustom = pkgs.anki.withAddons (
+    with pkgs.ankiAddons;
+    [
+      anki-connect
+    ]
+  );
+
+  devPython = pkgs.python3.withPackages (
+    ps: with ps; [
+      cached-property
+      certifi
+      charset-normalizer
+      chevron
+      frozendict
+      genanki
+      idna
+      requests
+      urllib3
+    ]
+  );
+
   devShells.default = pkgs.mkShellNoCC {
     packages =
       (with pkgs; [
@@ -42,20 +63,6 @@ lib.makeScope pkgs.newScope (scope: {
       export SASS_COMMAND="sass $ROOT_PATH/src/styles/scss:$ROOT_PATH/src/styles/css"
     '';
   };
-
-  devPython = pkgs.python3.withPackages (
-    ps: with ps; [
-      cached-property
-      certifi
-      charset-normalizer
-      chevron
-      frozendict
-      genanki
-      idna
-      requests
-      urllib3
-    ]
-  );
 
   flake.packages = lib.filterAttrs (n: v: lib.isDerivation v) scope.scripts;
   flake.devShells = scope.devShells;

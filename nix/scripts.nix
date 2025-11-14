@@ -1,10 +1,9 @@
 {
   lib,
   pkgs,
-  inputs,
-  system,
+  ankiCustom,
   ...
-}@args:
+}:
 {
   watch = pkgs.writeShellScriptBin "watch" ''
     $SASS_COMMAND --watch "$@"
@@ -21,6 +20,6 @@
   '';
 
   test = pkgs.writeShellScriptBin "test" ''
-    ${lib.getExe pkgs.anki} -b "$ROOT_PATH"/anki
+    ${lib.getExe ankiCustom} -b "$ROOT_PATH"/anki
   '';
 }
