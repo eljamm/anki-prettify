@@ -45,8 +45,7 @@ let
         packages = with pkgs; [
           dart-sass
           devPython
-          formatter.format
-          formatter.pre-commit-hook
+          formatter.package
           gitMinimal
           prettierd
           scripts.build
@@ -78,7 +77,7 @@ let
 
     flake.packages = lib.filterAttrs (n: v: lib.isDerivation v) packages;
     flake.devShells = shells;
-    flake.formatter = formatter;
+    flake.formatter = formatter.package;
   };
 in
 default // args

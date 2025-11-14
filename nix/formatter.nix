@@ -2,34 +2,25 @@
   lib,
   pkgs,
   inputs,
-  system,
   ...
-}@args:
-let
-  git-hooks = import inputs.git-hooks { inherit system; };
-  treefmt-nix = import inputs.treefmt-nix;
+}:
+lib.makeExtensible (self: {
+  treefmt = import inputs.treefmt-nix;
 
-  treefmt = treefmt-nix.mkWrapper pkgs {
+  config = {
     projectRootFile = "default.nix";
-    programs.nixfmt.enable = true;
+
     programs.actionlint.enable = true;
+    programs.zizmor.enable = true;
+
+    programs.nixfmt.enable = true;
     programs.prettier.enable = true;
     programs.ruff-format.enable = true;
+    programs.yamlfmt.enable = true;
   };
 
-  pre-commit-hook = pkgs.writeShellScriptBin "git-hooks" ''
-    if [[ -d .git ]]; then
-      ${with git-hooks.lib.git-hooks; pre-commit (wrap.abort-on-change treefmt)}
-    fi
-  '';
+  module = with self; treefmt.evalModule pkgs config;
 
-  format = pkgs.writeShellScriptBin "format" ''
-    ${lib.getExe treefmt}
-  '';
-in
-{
-  inherit
-    pre-commit-hook
-    format
-    ;
-}
+  package = with self; treefmt.mkWrapper pkgs config;
+  packages = with self; (treefmt.evalModule pkgs config).config.build.devShell.nativeBuildInputs;
+})
