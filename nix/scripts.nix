@@ -19,4 +19,8 @@
       python tools/build.py
     popd > /dev/null
   '';
+
+  test = pkgs.writeShellScriptBin "test" ''
+    ${lib.getExe pkgs.anki} -b "$ROOT_PATH"/anki
+  '';
 }

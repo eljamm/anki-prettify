@@ -51,6 +51,7 @@ let
           prettierd
           scripts.build
           scripts.package
+          scripts.test
           scripts.watch
         ];
 
