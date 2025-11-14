@@ -2,22 +2,22 @@
 
 //Catppuccin color palette
 @use "catppuccin" with (
-    // base
-    $background: #24273a,
-    // subtext0
-    $currentline: #a5adcb,
-    // text
-    $foreground: #cad3f5,
-    // surface2
-    $comment: #5b6078,
-    // sky
-    $cyan: #91d7e3,
-    $green: #a6da95,
-    // peach
-    $orange: #f5a97f,
-    $bold: #f5bde6,
-    // mauve
-    $accent: #c6a0f6,
-    $red: #ed8796,
-    $yellow: #eed49f
+  // base
+  $background: #24273a,
+  // subtext0
+  $currentline: #a5adcb,
+  // text
+  $foreground: #cad3f5,
+  // surface2
+  $comment: #5b6078,
+  // sky
+  $cyan: #91d7e3,
+  $green: #a6da95,
+  // peach
+  $orange: #f5a97f,
+  $bold: #f5bde6,
+  // mauve
+  $accent: #c6a0f6,
+  $red: #ed8796,
+  $yellow: #eed49f
 );
