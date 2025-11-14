@@ -6,11 +6,11 @@
 }:
 {
   watch = pkgs.writeShellScriptBin "watch" ''
-    $SASS_COMMAND --watch "$@"
+    ''${SASS_COMMAND:-${lib.getExe pkgs.dart-sass}} --watch "$@"
   '';
 
   build = pkgs.writeShellScriptBin "build" ''
-    $SASS_COMMAND "$@"
+    ''${SASS_COMMAND:-${lib.getExe pkgs.dart-sass}} "$@"
   '';
 
   package = pkgs.writeShellScriptBin "package" ''
@@ -20,6 +20,6 @@
   '';
 
   test = pkgs.writeShellScriptBin "test" ''
-    ${lib.getExe ankiCustom} -b "$ROOT_PATH"/anki
+    ${lib.getExe ankiCustom} -b "''${ROOT_PATH:-/tmp}"/anki
   '';
 }
