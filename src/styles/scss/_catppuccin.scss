@@ -22,8 +22,7 @@ $yellow: #000000 !default;
     --card-text-align: left;
     --font-size-regular: 16px;
     --font-size-small: 14px;
-    --font-family:
-        "Source Sans Pro", -apple-system, sytem-ui, BlinkMacSystemFont,
+    --font-family: "arial", -apple-system, sytem-ui, BlinkMacSystemFont,
         Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     --img-width: 50%;
     --img-brightness: 1;
@@ -330,7 +329,7 @@ pre {
 
 /* -------------------------------------------------- CUSTOM FONTS */
 @font-face {
-    font-family: Source Sans Pro;
+    font-family: arial;
     src:
         local("SourceSansPro-Regular"),
         url("_SourceSansPro-Regular.woff2") format("woff2");
@@ -339,7 +338,7 @@ pre {
 }
 
 @font-face {
-    font-family: Source Sans Pro;
+    font-family: arial;
     src:
         local("SourceSansPro-Bold"),
         url("_SourceSansPro-Bold.woff2") format("wofff2");
@@ -348,7 +347,7 @@ pre {
 }
 
 @font-face {
-    font-family: Source Sans Pro;
+    font-family: arial;
     src:
         local("SourceSansPro-Italic"),
         url("_SourceSansPro-Italic.woff2") format("wofff2");
@@ -357,7 +356,7 @@ pre {
 }
 
 @font-face {
-    font-family: Source Sans Pro;
+    font-family: arial;
     src:
         local("SourceSansPro-BoldItalic"),
         url("_SourceSansPro-BoldItalic.woff2") format("wofff2");
